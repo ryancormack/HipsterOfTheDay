@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HipsterOfTheDay", "HipsterOfTheDay\HipsterOfTheDay.csproj", "{C3385B9D-6382-4CF4-8A4E-3E14D168242D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HipsterOfTheDay.Web", "HipsterOfTheDay\HipsterOfTheDay.Web.csproj", "{C3385B9D-6382-4CF4-8A4E-3E14D168242D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HipsterOfTheDay.Tests", "HipsterOfTheDay.Tests\HipsterOfTheDay.Tests.csproj", "{83F6CDE5-F055-4B82-9B91-01722CF0238A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HispterOfTheDay.Domain", "HispterOfTheDay.Domain\HispterOfTheDay.Domain.csproj", "{227ADAFB-5214-492E-9A31-E1DAB290856B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{83F6CDE5-F055-4B82-9B91-01722CF0238A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83F6CDE5-F055-4B82-9B91-01722CF0238A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83F6CDE5-F055-4B82-9B91-01722CF0238A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{227ADAFB-5214-492E-9A31-E1DAB290856B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{227ADAFB-5214-492E-9A31-E1DAB290856B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{227ADAFB-5214-492E-9A31-E1DAB290856B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{227ADAFB-5214-492E-9A31-E1DAB290856B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
