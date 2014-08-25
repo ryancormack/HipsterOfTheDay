@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link href="~/Styles/reset.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width" />
+        <link href="~/Styles/style.css" rel="stylesheet" type="text/css"/>
+        <title></title>
+    </head>
+    <body>
+        <section id="TopMenu">
+            <div class="NavOption">Fixed menu goes here</div>
+        </section>
+
+        @RenderBody()
+        
+        <section>
+            <div id="footer"></div>
+        </section>
+    </body>
+</html>

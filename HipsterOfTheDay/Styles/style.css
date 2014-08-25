@@ -1,0 +1,14 @@
+﻿body {
+}
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#TopMenu {
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    background-color: #000000;
+    color: #808080;
+}
