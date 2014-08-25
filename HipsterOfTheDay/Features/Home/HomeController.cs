@@ -6,7 +6,7 @@ namespace HipsterOfTheDay.Features.Home
     {
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
     }
 
