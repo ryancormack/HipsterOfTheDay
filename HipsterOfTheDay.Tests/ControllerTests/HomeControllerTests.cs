@@ -22,9 +22,10 @@ namespace HipsterOfTheDay.Tests.ControllerTests
             };
 
 
+
             public Establish context = () =>
             {
-                _controller = new HomeController();
+                //_controller = new HomeController();
             };
 
             private static HomeController _controller;
