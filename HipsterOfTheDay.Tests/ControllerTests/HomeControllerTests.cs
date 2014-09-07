@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 using FluentAssertions;
 using HipsterOfTheDay.Features.Home;
 using Machine.Specifications;
@@ -66,6 +67,28 @@ namespace HipsterOfTheDay.Tests.ControllerTests
             private static IImageDataUrl _stubbedFileName;
             private static string _fileName;
             private static string _url;
+        }
+
+        public class When_sumbitting_a_null_canvas_item
+        {
+            public Because of = () =>
+            {
+                _result = Catch.Exception(() => _controller.Submit(_dataUrl));
+            };
+
+            public It should_return_an_exception = () =>
+            {
+                _result.Should().BeOfType(typeof (NullReferenceException));
+            };
+
+            public Establish context = () =>
+            {
+                _dataUrl = null;
+            };
+
+            private static HomeController _controller;
+            private static Exception _result;
+            private static string _dataUrl;
         }
     }
 }

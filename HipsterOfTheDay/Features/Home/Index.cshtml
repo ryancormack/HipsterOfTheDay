@@ -59,13 +59,4 @@
     document.getElementById("save").addEventListener("click", function() {
         $.post("/Home/Submit", { dataUrl: canvas.toDataURL() });
     });
-
-    ////save photo
-    //document.getElementById("save").addEventListener("click", function () {
-    //    $.ajax({
-    //        type: "POST",
-    //        url: '/Home/Submit',
-    //        dataUrl: canvas.toDataURL()
-    //    });
-    //});
 </script>

@@ -92,6 +92,7 @@
     <Content Include="Features\Shared\_Layout.cshtml" />
     <Content Include="packages.config" />
     <Content Include="Features\Test\Test.cshtml" />
+    <Content Include="Features\Home\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
