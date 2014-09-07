@@ -14,22 +14,22 @@ namespace HipsterOfTheDay.Tests.ControllerTests
     {
         public class When_getting_the_test_page
         {
-            public Because of = () =>
-            {
-                _result = _controller.Index();
-            };
+            Because of = () =>
+           {
+               _result = _controller.Index();
+           };
 
 
-            public It should_return_home_page = () =>
-            {
-                (_result as ViewResult).ViewName.Should().Be("Test");
-            };
+            It should_return_home_page = () =>
+           {
+               (_result as ViewResult).ViewName.Should().Be("Test");
+           };
 
 
-            public Establish context = () =>
-            {
-                _controller = new TestController();
-            };
+            Establish context = () =>
+           {
+               _controller = new TestController();
+           };
 
             private static TestController _controller;
             private static ActionResult _result;
@@ -37,20 +37,20 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
         public class When_submitting_text_it_should_save_to_raven
         {
-            public Because of = () =>
-            {
+            Because of = () =>
+           {
 
-            };
+           };
 
-            public It should_return_submit_the_text = () =>
-            {
+            It should_return_submit_the_text = () =>
+           {
 
-            };
+           };
 
-            public Establish context = () =>
-            {
-                _controller = new TestController();
-            };
+            Establish context = () =>
+           {
+               _controller = new TestController();
+           };
 
             private static TestController _controller;
         }

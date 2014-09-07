@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Web;
 using FluentAssertions;
 using HipsterOfTheDay.Features.Home;
 using Machine.Specifications;
 using System.Web.Mvc;
-using Machine.Specifications.Model;
 using Rhino.Mocks;
 
 
@@ -14,22 +12,22 @@ namespace HipsterOfTheDay.Tests.ControllerTests
     {
         public class When_getting_the_home_page
         {
-            public Because of = () =>
-            {
-                _result = _controller.Index();
-            };
+            Because of = () =>
+           {
+               _result = _controller.Index();
+           };
 
 
-            public It should_return_home_page = () =>
-            {
-                (_result as ViewResult).ViewName.Should().Be("Index");
-            };
+            It should_return_home_page = () =>
+           {
+               (_result as ViewResult).ViewName.Should().Be("Index");
+           };
 
 
-            public Establish context = () =>
-            {
-                _controller = new HomeController();
-            };
+            Establish context = () =>
+           {
+               _controller = new HomeController();
+           };
 
             private static HomeController _controller;
             private static ActionResult _result;
@@ -37,28 +35,28 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
         public class When_sumbitting_a_photo
         {
-            public Because of = () =>
-            {
-                _result = _controller.Submit(_dataUrl);
-            };
+            Because of = () =>
+           {
+               _result = _controller.Submit(_dataUrl);
+           };
 
 
-            public It should_save_image_to_folder = () =>
-            {
-                _result.Should().HaveLength(47);
-            };
+            It should_save_image_to_folder = () =>
+           {
+               _result.Should().HaveLength(47);
+           };
 
 
-            public Establish context = () =>
-            {
-                _dataUrl = "yoloimage";
-                _image = new ImageDataUrl(_dataUrl);
-                _stubbedFileName = MockRepository.GenerateStub<IImageDataUrl>();
-                _controller = new HomeController();
-                _fileName = new ImageDataUrl(_dataUrl).SaveTo("C:\\hipster");
-                _url = ("C:\\hipster" + _fileName);
-                _stubbedFileName.Stub(x => x.SaveTo("C:\\hipster")).Return(_fileName);
-            };
+            Establish context = () =>
+           {
+               _dataUrl = "yoloimage";
+               _image = new ImageDataUrl(_dataUrl);
+               _stubbedFileName = MockRepository.GenerateStub<IImageDataUrl>();
+               _controller = new HomeController();
+               _fileName = new ImageDataUrl(_dataUrl).SaveTo("C:\\hipster");
+               _url = ("C:\\hipster" + _fileName);
+               _stubbedFileName.Stub(x => x.SaveTo("C:\\hipster")).Return(_fileName);
+           };
 
             private static HomeController _controller;
             private static string _result;
@@ -71,20 +69,20 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
         public class When_sumbitting_a_null_canvas_item
         {
-            public Because of = () =>
-            {
-                _result = Catch.Exception(() => _controller.Submit(_dataUrl));
-            };
+            Because of = () =>
+           {
+               _result = Catch.Exception(() => _controller.Submit(_dataUrl));
+           };
 
-            public It should_return_an_exception = () =>
-            {
-                _result.Should().BeOfType(typeof (NullReferenceException));
-            };
+            It should_return_an_exception = () =>
+           {
+               _result.Should().BeOfType(typeof(NullReferenceException));
+           };
 
-            public Establish context = () =>
-            {
-                _dataUrl = null;
-            };
+            Establish context = () =>
+           {
+               _dataUrl = null;
+           };
 
             private static HomeController _controller;
             private static Exception _result;
