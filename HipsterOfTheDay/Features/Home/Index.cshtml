@@ -10,10 +10,12 @@
 <section>
     <video id="video" width="640" height="480" autoplay></video>
     <button id="snap">Snap Photo</button>
+    <button id="save">Save Photo</button>
     <canvas id="canvas" width="640" height="480"></canvas>
 </section>
 
 @*Footer goes here from layout*@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script>
     // Put event listeners into place
@@ -52,4 +54,18 @@
         var context = canvas.getContext("2d");
         context.drawImage(video, 0, 0, 640, 480);
     });
+
+    //save photo
+    document.getElementById("save").addEventListener("click", function() {
+        $.post("/Home/Submit", { dataUrl: canvas.toDataURL() });
+    });
+
+    ////save photo
+    //document.getElementById("save").addEventListener("click", function () {
+    //    $.ajax({
+    //        type: "POST",
+    //        url: '/Home/Submit',
+    //        dataUrl: canvas.toDataURL()
+    //    });
+    //});
 </script>

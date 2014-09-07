@@ -8,6 +8,13 @@ namespace HipsterOfTheDay.Features.Home
         {
             return View("Index");
         }
-    }
 
+        public string Submit(string dataUrl)
+        {
+            var image = new ImageDataUrl(dataUrl);
+            var fileName = image.SaveTo("C:\\hipster");
+            var url = ("C:\\hipster" + fileName);
+            return url;
+        }
+    }
 }
