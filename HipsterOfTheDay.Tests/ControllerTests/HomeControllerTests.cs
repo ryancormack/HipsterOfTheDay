@@ -5,7 +5,6 @@ using Machine.Specifications;
 using System.Web.Mvc;
 using Rhino.Mocks;
 
-
 namespace HipsterOfTheDay.Tests.ControllerTests
 {
     public class HomeControllerTests

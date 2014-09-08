@@ -42,5 +42,5 @@ namespace HipsterOfTheDay
             @"data:(?<mimeType>[\w]+)/(?<mimeSubType>[\w]+);\w+,(?<data>.*)",
             RegexOptions.Compiled
         );
-    }   
+    }
 }

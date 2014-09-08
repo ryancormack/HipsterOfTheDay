@@ -127,6 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="ImageDataUrl.cs" />
     <Compile Include="Infrastructure\Installers\ControllerInstaller.cs" />
     <Compile Include="Infrastructure\Factories\DocumentStoreFactory.cs" />
     <Compile Include="Infrastructure\Factories\WindsorControllerFactory.cs" />
