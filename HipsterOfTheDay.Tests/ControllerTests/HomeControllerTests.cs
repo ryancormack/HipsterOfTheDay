@@ -13,7 +13,7 @@ namespace HipsterOfTheDay.Tests.ControllerTests
         {
             Because of = () =>
             {
-               _result = _sut.NewSubmit(_imageData);
+               _result = _sut.Submit(_imageData);
             };
 
             It should_save_image = () =>
@@ -68,7 +68,7 @@ namespace HipsterOfTheDay.Tests.ControllerTests
         {
             Because of = () =>
            {
-               _result = _controller.Submit(_dataUrl);
+               _result = _controller.SubmitOld(_dataUrl);
            };
 
 
@@ -104,7 +104,7 @@ namespace HipsterOfTheDay.Tests.ControllerTests
         {
             Because of = () =>
            {
-               _result = Catch.Exception(() => _controller.Submit(_dataUrl));
+               _result = Catch.Exception(() => _controller.SubmitOld(_dataUrl));
            };
 
             It should_return_an_exception = () =>
