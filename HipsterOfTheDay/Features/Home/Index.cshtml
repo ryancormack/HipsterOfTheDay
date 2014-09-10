@@ -57,6 +57,6 @@
 
     //save photo
     document.getElementById("save").addEventListener("click", function() {
-        $.post("/Home/Submit", { dataUrl: canvas.toDataURL() });
+        $.post("/Home/Submit", { imageData: canvas.toDataURL() });
     });
 </script>

@@ -18,8 +18,7 @@ namespace HipsterOfTheDay.Features.Home
             return View("Index");
         }
 
-        [HttpPost]
-        public ActionResult NewSubmit(string imageData)
+        public ActionResult Submit(string imageData)
         {
             _imageService.Post(imageData);
 
@@ -27,7 +26,7 @@ namespace HipsterOfTheDay.Features.Home
         }
 
         [HttpPost]
-        public string Submit(string dataUrl)
+        public string SubmitOld(string dataUrl)
         {
             try
             {

@@ -5,16 +5,17 @@ namespace HispterOfTheDay.Domain.Repositories
 {
     public class ImageRepository : IImageRepository
     {
-        readonly IDocumentStore _documentStore;
+        readonly IDocumentSession _documentSession;
 
-        public ImageRepository(IDocumentStore documentStore)
+        public ImageRepository(IDocumentSession documentSession)
         {
-            _documentStore = documentStore;
+            _documentSession = documentSession;
         }
 
         public void Save(Image image)
         {
-            throw new System.NotImplementedException();
+            _documentSession.Store(image);
+            _documentSession.SaveChanges();
         }
     }
 }
