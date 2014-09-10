@@ -95,13 +95,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerTests\HomeControllerTests.cs" />
-    <Compile Include="ControllerTests\TestControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HipsterOfTheDay\HipsterOfTheDay.Web.csproj">
       <Project>{C3385B9D-6382-4CF4-8A4E-3E14D168242D}</Project>
       <Name>HipsterOfTheDay.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HispterOfTheDay.Domain\HispterOfTheDay.Domain.csproj">
+      <Project>{227ADAFB-5214-492E-9A31-E1DAB290856B}</Project>
+      <Name>HispterOfTheDay.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

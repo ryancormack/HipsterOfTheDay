@@ -1,6 +1,7 @@
 ﻿using System;
 using FluentAssertions;
 using HipsterOfTheDay.Features.Home;
+using HispterOfTheDay.Domain.Services;
 using Machine.Specifications;
 using System.Web.Mvc;
 using Rhino.Mocks;
@@ -25,11 +26,13 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
             Establish context = () =>
            {
-               _controller = new HomeController();
+               _postService = MockRepository.GenerateMock<IPostService>();
+               _controller = new HomeController(_postService);
            };
 
             private static HomeController _controller;
             private static ActionResult _result;
+            static IPostService _postService;
         }
 
         public class When_sumbitting_a_photo
@@ -47,23 +50,25 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
 
             Establish context = () =>
-           {
-               _dataUrl = "yoloimage";
-               _image = new ImageDataUrl(_dataUrl);
-               _stubbedFileName = MockRepository.GenerateStub<IImageDataUrl>();
-               _controller = new HomeController();
-               _fileName = new ImageDataUrl(_dataUrl).SaveTo("C:\\hipster");
-               _url = ("C:\\hipster" + _fileName);
-               _stubbedFileName.Stub(x => x.SaveTo("C:\\hipster")).Return(_fileName);
-           };
+            {
+                _postService = MockRepository.GenerateMock<IPostService>();
+                _dataUrl = "yoloimage";
+                _image = new ImageDataUrl(_dataUrl);
+                _stubbedFileName = MockRepository.GenerateStub<IImageDataUrl>();
+                _controller = new HomeController(_postService);
+                _fileName = MockRepository.GenerateStub<IImageDataUrl>();
+                //_fileName = new ImageDataUrl(_dataUrl).SaveTo("C:\\hipster");
+                _url = ("C:\\hipster" + _fileName);
+            };
 
             private static HomeController _controller;
             private static string _result;
             private static string _dataUrl;
             private static ImageDataUrl _image;
             private static IImageDataUrl _stubbedFileName;
-            private static string _fileName;
             private static string _url;
+            static IPostService _postService;
+            static IImageDataUrl _fileName;
         }
 
         public class When_sumbitting_a_null_canvas_item
