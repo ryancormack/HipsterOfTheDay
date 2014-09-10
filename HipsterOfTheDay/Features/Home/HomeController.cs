@@ -7,15 +7,23 @@ namespace HipsterOfTheDay.Features.Home
     public class HomeController : Controller
     {
     
-    readonly IPostService _postService;
+    readonly IImageService _imageService;
 
-        public HomeController(IPostService postService)
+        public HomeController(IImageService imageService)
         {
-            _postService = postService;
+            _imageService = imageService;
         }
         public ActionResult Index()
         {
             return View("Index");
+        }
+
+        [HttpPost]
+        public ActionResult NewSubmit(string imageData)
+        {
+            _imageService.Post(imageData);
+
+            return View("Success");
         }
 
         [HttpPost]

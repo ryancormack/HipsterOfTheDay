@@ -8,8 +8,37 @@ using Rhino.Mocks;
 
 namespace HipsterOfTheDay.Tests.ControllerTests
 {
-    public class HomeControllerTests
-    {
+
+        class when_submiting_a_valid_image
+        {
+            Because of = () =>
+            {
+               _result = _sut.NewSubmit(_imageData);
+            };
+
+            It should_save_image = () =>
+            {
+                _imageService.AssertWasCalled(x=>x.Post(_imageData));
+            };
+
+            It should_return_sucess_view = () =>
+            {
+                (_result as ViewResult).ViewName.Should().Be("Success");
+            };
+
+            Establish context = () =>
+            {
+                _imageData = "someBigOlString";
+                _imageService = MockRepository.GenerateStub<IImageService>();
+                _sut = new HomeController(_imageService);
+            };
+
+            static string _imageData;
+            static HomeController _sut;
+            static IImageService _imageService;
+            static ActionResult _result;
+        }
+
         public class When_getting_the_home_page
         {
             Because of = () =>
@@ -26,13 +55,13 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
             Establish context = () =>
            {
-               _postService = MockRepository.GenerateMock<IPostService>();
-               _controller = new HomeController(_postService);
+               _imageService = MockRepository.GenerateMock<IImageService>();
+               _controller = new HomeController(_imageService);
            };
 
             private static HomeController _controller;
             private static ActionResult _result;
-            static IPostService _postService;
+            static IImageService _imageService;
         }
 
         public class When_sumbitting_a_photo
@@ -51,11 +80,11 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
             Establish context = () =>
             {
-                _postService = MockRepository.GenerateMock<IPostService>();
+                _imageService = MockRepository.GenerateMock<IImageService>();
                 _dataUrl = "yoloimage";
                 _image = new ImageDataUrl(_dataUrl);
                 _stubbedFileName = MockRepository.GenerateStub<IImageDataUrl>();
-                _controller = new HomeController(_postService);
+                _controller = new HomeController(_imageService);
                 _fileName = MockRepository.GenerateStub<IImageDataUrl>();
                 //_fileName = new ImageDataUrl(_dataUrl).SaveTo("C:\\hipster");
                 _url = ("C:\\hipster" + _fileName);
@@ -67,7 +96,7 @@ namespace HipsterOfTheDay.Tests.ControllerTests
             private static ImageDataUrl _image;
             private static IImageDataUrl _stubbedFileName;
             private static string _url;
-            static IPostService _postService;
+            static IImageService _imageService;
             static IImageDataUrl _fileName;
         }
 
@@ -93,4 +122,3 @@ namespace HipsterOfTheDay.Tests.ControllerTests
             private static string _dataUrl;
         }
     }
-}
