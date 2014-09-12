@@ -18,6 +18,7 @@ namespace HipsterOfTheDay.Features.Home
             return View("Index");
         }
 
+        [HttpPost]
         public ActionResult Submit(string imageData)
         {
             _imageService.Post(imageData);
@@ -39,6 +40,12 @@ namespace HipsterOfTheDay.Features.Home
             {
                 return e.ToString();
             }
+        }
+
+        public ActionResult LatestHipster()
+        {
+            var model = new LatestHipsterViewModel();
+            return View("latest", model);
         }
     }
 }

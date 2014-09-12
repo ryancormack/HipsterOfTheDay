@@ -16,5 +16,11 @@ namespace HispterOfTheDay.Domain.Services
         {
            _imageRepository.Save(new Image{ImageData = imageData});
         }
+
+        public string GetLatestImageString()
+        {
+            var latestDoucheHipsterImageString = _imageRepository.GetLatestImageString();
+            return latestDoucheHipsterImageString;
+        }
     }
 }

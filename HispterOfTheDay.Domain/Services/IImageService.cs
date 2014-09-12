@@ -3,6 +3,8 @@
     public interface IImageService : IService
     {
         void Post(string imageData);
+
+        string GetLatestImageString();
     }
 
 }

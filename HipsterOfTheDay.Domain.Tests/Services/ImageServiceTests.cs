@@ -1,4 +1,5 @@
-﻿using HispterOfTheDay.Domain.Model;
+﻿using FluentAssertions;
+using HispterOfTheDay.Domain.Model;
 using HispterOfTheDay.Domain.Repositories;
 using HispterOfTheDay.Domain.Services;
 using Machine.Specifications;
@@ -24,11 +25,38 @@ namespace HipsterOfTheDay.Domain.Tests.Services
             _image = new Image{ ImageData = _imageData };
             _imageRepository = MockRepository.GenerateStub<IImageRepository>();
             _sut = new ImageService(_imageRepository);
-            
         };
+
         static IImageService _sut;
         static IImageRepository _imageRepository;
         static string _imageData;
         static Image _image;
+    }
+
+    class when_getting_latest_image_string
+    {
+        Because of = () =>
+        {
+            _sut.GetLatestImageString();
+        };
+
+        It should_get_the_latest_image_base_string = () =>
+        {
+            _imageRepository.AssertWasCalled(x => x.GetLatestImageString());
+        };
+
+        It should_return_an_image = () =>
+        {
+            
+        };
+
+        Establish context = () =>
+        {
+            _imageRepository = MockRepository.GenerateStub<IImageRepository>();
+            _sut = new ImageService(_imageRepository);
+        };
+
+        static IImageService _sut;
+        static IImageRepository _imageRepository;
     }
 }
