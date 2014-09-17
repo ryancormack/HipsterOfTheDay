@@ -45,11 +45,6 @@ namespace HipsterOfTheDay.Domain.Tests.Services
             _imageRepository.AssertWasCalled(x => x.GetLatestImageString());
         };
 
-        It should_return_an_image = () =>
-        {
-            
-        };
-
         Establish context = () =>
         {
             _imageRepository = MockRepository.GenerateStub<IImageRepository>();

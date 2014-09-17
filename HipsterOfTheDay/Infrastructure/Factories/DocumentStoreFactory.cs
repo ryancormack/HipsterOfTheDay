@@ -8,7 +8,7 @@ namespace HipsterOfTheDay.Infrastructure.Factories
     {
         public static IDocumentStore CreateDocumentStore()
         {
-            var documentStore = new DocumentStore { ConnectionStringName = "HipsterHQ" };
+            var documentStore = new DocumentStore { ConnectionStringName = "HipsterOfTheDayLocal" };
             documentStore.Initialize();
             //IndexCreation.CreateIndexes(typeof(Post).Assembly, store);
             return documentStore;

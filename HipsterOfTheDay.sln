@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HipsterOfTheDay.Web", "HipsterOfTheDay\HipsterOfTheDay.Web.csproj", "{C3385B9D-6382-4CF4-8A4E-3E14D168242D}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HispterOfTheDay.Domain", "HispterOfTheDay.Domain\HispterOfTheDay.Domain.csproj", "{227ADAFB-5214-492E-9A31-E1DAB290856B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HipsterOfTheDay.Domain.Tests", "HipsterOfTheDay.Domain.Tests\HipsterOfTheDay.Domain.Tests.csproj", "{3F9E54A3-83BD-4C0C-8AF8-DA8DB2E3FDE4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{334243B3-DCB7-4638-90EB-4B3629CF8D55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{83F6CDE5-F055-4B82-9B91-01722CF0238A} = {334243B3-DCB7-4638-90EB-4B3629CF8D55}
+		{3F9E54A3-83BD-4C0C-8AF8-DA8DB2E3FDE4} = {334243B3-DCB7-4638-90EB-4B3629CF8D55}
 	EndGlobalSection
 EndGlobal

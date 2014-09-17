@@ -22,7 +22,7 @@ namespace HispterOfTheDay.Domain.Repositories
 
         public string GetLatestImageString()
         {
-            string latestImage = _documentSession.Query<Image>().OrderByDescending(x => x.ImageData).Take(1).FirstOrDefault().ToString();
+            string latestImage = _documentSession.Query<Image>().FirstOrDefault().ImageData;
             return latestImage;
         }
     }
