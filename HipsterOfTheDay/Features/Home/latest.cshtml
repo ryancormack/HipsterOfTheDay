@@ -6,3 +6,10 @@
 
 <h2>title</h2>
 @Model.LatestHipsterImageString
+
+
+@{
+    var imgSrc = String.Format(Model.LatestHipsterImageString,"{0}");
+}
+
+<img src="@imgSrc" width="640" height="480" />
