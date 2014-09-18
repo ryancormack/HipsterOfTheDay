@@ -4,12 +4,5 @@
     ViewBag.Title = "Latest Hipster";
 }
 
-<h2>title</h2>
-@Model.LatestHipsterImageString
+<img src="@Model.LatestHipsterImageData" width="640" height="480" />
 
-
-@{
-    var imgSrc = String.Format(Model.LatestHipsterImageString,"{0}");
-}
-
-<img src="@imgSrc" width="640" height="480" />

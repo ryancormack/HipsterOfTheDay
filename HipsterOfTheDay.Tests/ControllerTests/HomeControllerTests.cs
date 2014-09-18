@@ -91,7 +91,7 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
         It should_display_the_latest_hipster_page = () =>
         {
-            (_result as ViewResult).ViewName.Should().Be("latest");
+            (_result as ViewResult).ViewName.Should().Be("Latest");
         };
 
         Establish context = () =>
