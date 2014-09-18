@@ -37,12 +37,12 @@ namespace HipsterOfTheDay.Domain.Tests.Services
     {
         Because of = () =>
         {
-            _sut.GetLatestImageString();
+            _sut.GetLatestImageData();
         };
 
         It should_get_the_latest_image_base_string = () =>
         {
-            _imageRepository.AssertWasCalled(x => x.GetLatestImageString());
+            _imageRepository.AssertWasCalled(x => x.GetLatestImageData());
         };
 
         Establish context = () =>

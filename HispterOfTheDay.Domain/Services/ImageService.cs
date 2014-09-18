@@ -17,9 +17,9 @@ namespace HispterOfTheDay.Domain.Services
            _imageRepository.Save(new Image{ImageData = imageData});
         }
 
-        public string GetLatestImageString()
+        public string GetLatestImageData()
         {
-            var latestDoucheHipsterImageString = _imageRepository.GetLatestImageString();
+            var latestDoucheHipsterImageString = _imageRepository.GetLatestImageData();
             return latestDoucheHipsterImageString;
         }
     }

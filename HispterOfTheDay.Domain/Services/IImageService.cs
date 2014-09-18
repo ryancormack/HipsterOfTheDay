@@ -4,7 +4,7 @@
     {
         void Post(string imageData);
 
-        string GetLatestImageString();
+        string GetLatestImageData();
     }
 
 }

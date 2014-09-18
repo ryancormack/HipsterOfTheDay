@@ -1,6 +1,4 @@
 ﻿namespace HispterOfTheDay.Domain.Repositories
 {
-    public interface IRepository
-    {
-    }
+    public interface IRepository {}
 }

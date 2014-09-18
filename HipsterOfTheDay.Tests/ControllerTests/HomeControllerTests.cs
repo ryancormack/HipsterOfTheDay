@@ -1,6 +1,4 @@
-﻿using System;
-using System.Configuration;
-using FluentAssertions;
+﻿using FluentAssertions;
 using HipsterOfTheDay.Features.Home;
 using HispterOfTheDay.Domain.Services;
 using Machine.Specifications;
@@ -10,7 +8,7 @@ using Rhino.Mocks;
 namespace HipsterOfTheDay.Tests.ControllerTests
 {
 
-    class when_submiting_a_valid_image
+    public class when_submiting_a_valid_image
     {
         Because of = () =>
         {
@@ -84,7 +82,7 @@ namespace HipsterOfTheDay.Tests.ControllerTests
         static IImageService _imageService;
     }
 
-    class when_displaying_the_latest_image
+    public class when_displaying_the_latest_image
     {
         Because of = () =>
         {
@@ -98,8 +96,8 @@ namespace HipsterOfTheDay.Tests.ControllerTests
 
         Establish context = () =>
         {
-            _sut = new HomeController(_imageService);
             _imageService = MockRepository.GenerateMock<IImageService>();
+            _sut = new HomeController(_imageService);
         };
 
 

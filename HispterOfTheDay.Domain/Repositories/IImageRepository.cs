@@ -6,6 +6,6 @@ namespace HispterOfTheDay.Domain.Repositories
     {
         void Save(Image image);
 
-        string GetLatestImageString();
+        string GetLatestImageData();
     }
 }

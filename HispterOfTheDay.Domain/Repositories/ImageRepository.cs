@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using HispterOfTheDay.Domain.Model;
 using Raven.Client;
-using Raven.Client.Linq;
 
 namespace HispterOfTheDay.Domain.Repositories
 {
@@ -20,10 +19,9 @@ namespace HispterOfTheDay.Domain.Repositories
             _documentSession.SaveChanges();
         }
 
-        public string GetLatestImageString()
+        public string GetLatestImageData()
         {
-            string latestImage = _documentSession.Query<Image>().FirstOrDefault().ImageData;
-            return latestImage;
+            return _documentSession.Query<Image>().FirstOrDefault().ImageData;
         }
     }
 }

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Web.Mvc;
-using AutoMapper;
-using HispterOfTheDay.Domain.Model;
+﻿using System.Web.Mvc;
 using HispterOfTheDay.Domain.Services;
 
 namespace HipsterOfTheDay.Features.Home
@@ -30,7 +26,7 @@ namespace HipsterOfTheDay.Features.Home
 
         public ActionResult LatestHipster()
         {
-            var model = new LatestHipsterViewModel { LatestHipsterImageString = _imageService.GetLatestImageString() };
+            var model = new LatestHipsterViewModel { LatestHipsterImageString = _imageService.GetLatestImageData() };
             return View("latest", model);
         }
 
