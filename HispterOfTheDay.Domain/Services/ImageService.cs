@@ -1,4 +1,6 @@
-﻿using HispterOfTheDay.Domain.Model;
+﻿using System;
+using HispterOfTheDay.Domain.Helpers;
+using HispterOfTheDay.Domain.Model;
 using HispterOfTheDay.Domain.Repositories;
 
 namespace HispterOfTheDay.Domain.Services
@@ -14,13 +16,13 @@ namespace HispterOfTheDay.Domain.Services
 
         public void Post(string imageData)
         {
-           _imageRepository.Save(new Image{ImageData = imageData});
+           _imageRepository.Save(new Image{ImageData = imageData, CaptureTime = DateTime.UtcNow});
         }
 
         public string GetLatestImageData()
         {
-            var latestDoucheHipsterImageString = _imageRepository.GetLatestImageData();
-            return latestDoucheHipsterImageString;
+            var latestDoucheHipsterImage = _imageRepository.GetLatestImage();
+            return latestDoucheHipsterImage.ImageData;
         }
     }
 }

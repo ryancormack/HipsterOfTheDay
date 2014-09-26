@@ -42,13 +42,14 @@ namespace HipsterOfTheDay.Domain.Tests.Services
 
         It should_get_the_latest_image_base_string = () =>
         {
-            _imageRepository.AssertWasCalled(x => x.GetLatestImageData());
+            _imageRepository.AssertWasCalled(x => x.GetLatestImage());
         };
 
         Establish context = () =>
         {
             _imageRepository = MockRepository.GenerateStub<IImageRepository>();
             _sut = new ImageService(_imageRepository);
+            _imageRepository.Stub(x => x.GetLatestImage()).Return(new Image() { ImageData = "YoureADoucheHipster" });
         };
 
         static IImageService _sut;

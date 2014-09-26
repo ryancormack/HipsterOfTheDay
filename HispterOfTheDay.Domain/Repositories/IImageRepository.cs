@@ -1,4 +1,5 @@
-﻿using HispterOfTheDay.Domain.Model;
+﻿using System.Collections.Generic;
+using HispterOfTheDay.Domain.Model;
 
 namespace HispterOfTheDay.Domain.Repositories
 {
@@ -6,6 +7,6 @@ namespace HispterOfTheDay.Domain.Repositories
     {
         void Save(Image image);
 
-        string GetLatestImageData();
+        Image GetLatestImage();
     }
 }

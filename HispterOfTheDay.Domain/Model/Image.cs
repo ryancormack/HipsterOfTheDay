@@ -1,4 +1,6 @@
-﻿namespace HispterOfTheDay.Domain.Model
+﻿using System;
+
+namespace HispterOfTheDay.Domain.Model
 {
     public class Image
     {
@@ -30,5 +32,8 @@
         }
 
         public string ImageData { get; set; }
+
+        public DateTime CaptureTime { get; set; }
+
     }
 }
