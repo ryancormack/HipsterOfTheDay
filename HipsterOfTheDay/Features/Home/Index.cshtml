@@ -57,8 +57,18 @@
 
     //save photo
     document.getElementById("save").addEventListener("click", function() {
-        $.post("/Home/Submit", { imageData: canvas.toDataURL() }, function() {
+        $.post("/Home/Submit", { imageData: canvas.toDataURL() }, function () {
             window.location.href = '/home/success';
         });
     });
+
+    //Everyone loves geolocation. You've got to know where the hipster is so you can avoid that area in the future
+
+    window.onload = function getLocation() {
+        navigator.geolocation.getCurrentPosition(function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            console.log("long is " + longitude + " lat is " + latitude);
+        });
+    }
 </script>

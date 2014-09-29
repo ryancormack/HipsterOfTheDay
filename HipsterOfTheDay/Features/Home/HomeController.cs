@@ -19,9 +19,9 @@ namespace HipsterOfTheDay.Features.Home
         }
 
         [HttpPost]
-        public void Submit(string imageData)
+        public void Submit(string imageData, double latitude, double longitude)
         {
-            _imageService.Post(imageData);
+            _imageService.Post(imageData, latitude, longitude);
         }
 
         public ActionResult LatestHipster()

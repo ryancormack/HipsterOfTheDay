@@ -12,17 +12,19 @@ namespace HipsterOfTheDay.Tests.ControllerTests
     {
         Because of = () =>
         {
-             _sut.Submit(_imageData);
+             _sut.Submit(_imageData, _latitude, _longitude);
         };
 
         It should_save_image = () =>
         {
-            _imageService.AssertWasCalled(x => x.Post(_imageData));
+            _imageService.AssertWasCalled(x => x.Post(_imageData, _latitude, _longitude));
         };
 
         Establish context = () =>
         {
             _imageData = "someBigOlString";
+            _longitude = 57.15;
+            _latitude = 2.11;
             _imageService = MockRepository.GenerateStub<IImageService>();
             _sut = new HomeController(_imageService);
         };
@@ -30,6 +32,8 @@ namespace HipsterOfTheDay.Tests.ControllerTests
         static string _imageData;
         static HomeController _sut;
         static IImageService _imageService;
+        private static double _latitude;
+        private static double _longitude;
     }
 
     public class When_getting_the_home_page

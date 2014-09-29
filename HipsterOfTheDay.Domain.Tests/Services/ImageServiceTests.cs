@@ -11,7 +11,7 @@ namespace HipsterOfTheDay.Domain.Tests.Services
     {
         Because of = () =>
         {
-            _sut.Post(_imageData);  
+            _sut.Post(_imageData, _latitude, _longitude);  
         };
 
         It should_save_image = () =>
@@ -22,7 +22,7 @@ namespace HipsterOfTheDay.Domain.Tests.Services
         Establish context = () =>
         {
             _imageData = "someBigString";
-            _image = new Image{ ImageData = _imageData };
+            _image = new Image{ ImageData = _imageData, Latitude = _latitude, Longitude = _longitude};
             _imageRepository = MockRepository.GenerateStub<IImageRepository>();
             _sut = new ImageService(_imageRepository);
         };
@@ -31,6 +31,8 @@ namespace HipsterOfTheDay.Domain.Tests.Services
         static IImageRepository _imageRepository;
         static string _imageData;
         static Image _image;
+        private static double _latitude;
+        private static double _longitude;
     }
 
     class when_getting_latest_image_string

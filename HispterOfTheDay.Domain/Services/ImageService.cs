@@ -14,7 +14,7 @@ namespace HispterOfTheDay.Domain.Services
             _imageRepository = imageRepository;
         }
 
-        public void Post(string imageData)
+        public void Post(string imageData, double longitude, double latitude)
         {
            _imageRepository.Save(new Image{ImageData = imageData, CaptureTime = DateTime.UtcNow});
         }

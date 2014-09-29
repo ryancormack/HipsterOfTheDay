@@ -2,7 +2,7 @@
 {
     public interface IImageService : IService
     {
-        void Post(string imageData);
+        void Post(string imageData, double longitude, double latitude);
 
         string GetLatestImageData();
     }
