@@ -16,13 +16,13 @@ namespace HispterOfTheDay.Domain.Services
 
         public void Post(string imageData, double longitude, double latitude)
         {
-           _imageRepository.Save(new Image{ImageData = imageData, CaptureTime = DateTime.UtcNow});
+           _imageRepository.Save(new Image{ImageData = imageData, CaptureTime = DateTime.UtcNow, Longitude = longitude, Latitude = latitude});
         }
 
-        public string GetLatestImageData()
+        public Image GetLatestImage()
         {
             var latestDoucheHipsterImage = _imageRepository.GetLatestImage();
-            return latestDoucheHipsterImage.ImageData;
+            return latestDoucheHipsterImage;
         }
     }
 }

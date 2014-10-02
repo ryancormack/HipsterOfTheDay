@@ -26,7 +26,7 @@ namespace HipsterOfTheDay.Features.Home
 
         public ActionResult LatestHipster()
         {
-            var model = new LatestHipsterViewModel { LatestHipsterImageData = _imageService.GetLatestImageData() };
+            var model = new LatestHipsterViewModel { LatestHipsterImage = _imageService.GetLatestImage()};
             return View("Latest", model);
         }
 

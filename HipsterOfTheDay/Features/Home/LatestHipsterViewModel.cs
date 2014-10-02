@@ -1,7 +1,9 @@
-﻿namespace HipsterOfTheDay.Features.Home
+﻿using HispterOfTheDay.Domain.Model;
+
+namespace HipsterOfTheDay.Features.Home
 {
     public class LatestHipsterViewModel
     {
-        public string LatestHipsterImageData { get; set; }
+        public Image LatestHipsterImage { get; set; }
     }
 }

@@ -39,7 +39,7 @@ namespace HipsterOfTheDay.Domain.Tests.Services
     {
         Because of = () =>
         {
-            _sut.GetLatestImageData();
+            _sut.GetLatestImage();
         };
 
         It should_get_the_latest_image_base_string = () =>

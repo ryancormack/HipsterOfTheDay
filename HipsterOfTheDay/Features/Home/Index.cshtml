@@ -54,21 +54,19 @@
         var context = canvas.getContext("2d");
         context.drawImage(video, 0, 0, 640, 480);
     });
-
-    //save photo
-    document.getElementById("save").addEventListener("click", function() {
-        $.post("/Home/Submit", { imageData: canvas.toDataURL() }, function () {
-            window.location.href = '/home/success';
-        });
-    });
-
     //Everyone loves geolocation. You've got to know where the hipster is so you can avoid that area in the future
 
-    window.onload = function getLocation() {
+    $(function getLocation() {
         navigator.geolocation.getCurrentPosition(function showPosition(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            console.log("long is " + longitude + " lat is " + latitude);
+            var userLatitude = position.coords.latitude;
+            var userLongitude = position.coords.longitude;
+
+            //save photo
+            document.getElementById("save").addEventListener("click", function () {
+                $.post("/Home/Submit", { imageData: canvas.toDataURL(), latitude: userLatitude, longitude: userLongitude }, function () {
+                    window.location.href = '/home/success';
+                });
+            });
         });
-    }
+    });
 </script>
