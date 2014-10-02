@@ -42,7 +42,7 @@ namespace HipsterOfTheDay.Domain.Tests.Services
             _sut.GetLatestImage();
         };
 
-        It should_get_the_latest_image_base_string = () =>
+        It should_get_the_latest_image = () =>
         {
             _imageRepository.AssertWasCalled(x => x.GetLatestImage());
         };
@@ -51,7 +51,7 @@ namespace HipsterOfTheDay.Domain.Tests.Services
         {
             _imageRepository = MockRepository.GenerateStub<IImageRepository>();
             _sut = new ImageService(_imageRepository);
-            _imageRepository.Stub(x => x.GetLatestImage()).Return(new Image() { ImageData = "YoureADoucheHipster" });
+            _imageRepository.Stub(x => x.GetLatestImage()).Return(new Image() { ImageData = "YoureADoucheHipster", Latitude = 1.1, Longitude = 2.2});
         };
 
         static IImageService _sut;
