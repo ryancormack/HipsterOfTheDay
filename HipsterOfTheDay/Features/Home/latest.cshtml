@@ -1,34 +1,26 @@
 ﻿@model HipsterOfTheDay.Features.Home.LatestHipsterViewModel
 
 @{
+    Layout = "~/Features/Shared/_Layout.cshtml";
     ViewBag.Title = "Latest Hipster";
 }
-<html>
-<head>
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 
-</head>
-
-<body>
-    <div id="map" style="height: 100%;width: 100%;"></div>
+<div id="map"></div>
     <script>
-    var map = L.map('map').setView([@Model.LatestHipsterImage.Longitude, @Model.LatestHipsterImage.Latitude], 16);
+        var map = L.map('map').setView([@Model.LatestHipsterImage.Longitude, @Model.LatestHipsterImage.Latitude], 16);
 
-    //Open Street Maps rules yo.
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy;<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        //Open Street Maps rules yo.
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy;<a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    var hipsterIcon = L.icon({
-        iconUrl: '../../Assets/Icons/hipster.png',
-        iconSize: [128, 128]
-    });
+        var hipsterIcon = L.icon({
+            iconUrl: '../../Assets/Icons/hipster.png',
+            iconSize: [128, 128]
+        });
 
-    //Avoid this area. Douchebags about
-    L.marker([@Model.LatestHipsterImage.Longitude, @Model.LatestHipsterImage.Latitude], {icon: hipsterIcon}).addTo(map)
-        .bindPopup('<a href="@Model.LatestHipsterImage.ImageData" target="_blank">Latest Douchebag</a>')
-        .openPopup();
+        //Avoid this area. Douchebags about
+        L.marker([@Model.LatestHipsterImage.Longitude, @Model.LatestHipsterImage.Latitude], { icon: hipsterIcon }).addTo(map)
+            .bindPopup('<a href="@Model.LatestHipsterImage.ImageData" target="_blank">Latest Douchebag</a>')
+            .openPopup();
     </script>
-</body>
-</html>

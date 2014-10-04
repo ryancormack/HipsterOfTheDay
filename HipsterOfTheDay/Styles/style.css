@@ -1,14 +1,27 @@
-﻿body {
-}
-h1 {
-    font-size: 2em;
-    font-weight: bold;
+﻿html, body {
+    height: 100%;
+    width: 100%;
 }
 
-#TopMenu {
-    height: 40px;
-    position: fixed;
-    width: 100%;
+#header {
     background-color: #000000;
     color: #808080;
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    z-index: 99999;
 }
+
+.container {
+    width: 100%;
+    height:calc(100% - 40px);
+    padding-top: 40px;
+    margin: 0 auto;
+}
+
+#map {
+    min-height: calc(100% - 40px);
+    width: 100%;
+    padding-top: 40px;
+}
+
