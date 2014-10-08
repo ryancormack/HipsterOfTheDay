@@ -5,13 +5,16 @@
 @*Header from layout file goes in here first for nav menu*@
 
 <section>
-    <video id="video" width="640" height="480" autoplay></video>
+    <div class="imageArea">
+        <video id="video" autoplay></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
     <button id="snap">Snap Photo</button>
+    <button id="cancel">Cancel</button>
     <button id="save">Save Photo</button>
-    <canvas id="canvas" width="640" height="480"></canvas>
 </section>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 
 <script>
     // Put event listeners into place
@@ -48,7 +51,20 @@
     // Trigger photo take
     document.getElementById("snap").addEventListener("click", function () {
         var context = canvas.getContext("2d");
+        $("#canvas").show();
+        $("#save").show();
         context.drawImage(video, 0, 0, 640, 480);
+        $("#video").hide();
+        $("#snap").hide();
+        $("#cancel").show();
+    });
+
+    document.getElementById("cancel").addEventListener("click", function () {
+        $("#video").show();
+        $("#snap").show();
+        $("#save").hide();
+        $("#cancel").hide();
+        $("#canvas").hide();
     });
     //Everyone loves geolocation. You've got to know where the hipster is so you can avoid that area in the future
 
