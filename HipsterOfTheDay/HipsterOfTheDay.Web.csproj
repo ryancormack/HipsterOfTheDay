@@ -109,6 +109,7 @@
     <Content Include="packages.config" />
     <Content Include="Features\Home\Latest.cshtml" />
     <Content Include="Features\Home\Success.cshtml" />
+    <Content Include="Config\ConnectionStrings.config" />
     <None Include="Properties\PublishProfiles\hipsteroftheday.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -146,6 +147,7 @@
       <Name>HispterOfTheDay.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
