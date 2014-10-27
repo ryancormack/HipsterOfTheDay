@@ -72,6 +72,7 @@
         navigator.geolocation.getCurrentPosition(function showPosition(position) {
             var userLatitude = position.coords.latitude;
             var userLongitude = position.coords.longitude;
+            console.log("latitude is " + position.coords.latitude + "long is " + position.coords.longitude);
 
             //save photo
             document.getElementById("save").addEventListener("click", function () {
