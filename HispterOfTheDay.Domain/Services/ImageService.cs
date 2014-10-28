@@ -1,5 +1,4 @@
 ﻿using System;
-using HispterOfTheDay.Domain.Helpers;
 using HispterOfTheDay.Domain.Model;
 using HispterOfTheDay.Domain.Repositories;
 
